@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
+import { BiLogoGmail } from "react-icons/bi";
 
 const Section = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const Links = styled.div`
 `
 
 const Logo = styled.img`
-  height: 100px;
+  height: 60px;
 `
 
 const List = styled.ul`
@@ -53,14 +54,15 @@ const Icon = styled.img`
 
 
 const Button = styled.button`
-   width: 200px;
-   padding: 15px;
+   width: 140px;
+   padding: 3px;
    background-color: #424685;
    color: #ffffff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
 `
+
 
 
 const Icons = styled.div`
@@ -79,14 +81,17 @@ const Navbar = () => {
     <Section>
         <Container>
         <Links>
-        <Logo src="./img/moon.png"/>
+        <Logo src="./img/mylogo.png"/>
         
             
         
         </Links>
         <Icons>
             
-            <Button onClick={()=>newtab('https://mail.google.com ')}><h3>Contact Me</h3></Button>
+            <Button onClick={()=>newtab('https://mail.google.com ')}>
+              <h3 style={{ marginRight: '10px' }}>Contact Me</h3>
+               <BiLogoGmail style={{ fontSize: '24px' }} />
+            </Button>
         </Icons>
        </Container> 
     </Section>

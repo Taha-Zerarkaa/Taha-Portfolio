@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {AiFillFacebook, AiFillGithub, AiFillLinkedin, AiFillTwitterCircle}from 'react-icons/ai'
+import { SiWeb3Dotjs, SiSmartthings} from "react-icons/si";
 
 
 
@@ -139,6 +140,10 @@ const Contact = () => {
               <AiFillGithub onClick={handlegithubClick} style={{ fontSize: 50 }}/>
               <AiFillTwitterCircle onClick={handletwitterClick} style={{ fontSize: 50 }}/>
               <AiFillLinkedin onClick={handlelinkedinClick} style={{ fontSize: 50 }}/>
+              <SiWeb3Dotjs style={{ width: '100px', }}/>
+              <SiSmartthings style={{ width: '100px', }}/>
+            
+
               </Social>
         </Form>
       </Left>
