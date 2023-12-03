@@ -3,6 +3,7 @@ import React from 'react'
 import { SiSolidity,SiChainlink,SiOpenzeppelin,SiBlockchaindotcom } from "react-icons/si";
 import {FaEthereum,FaBitcoin,FaHardHat } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
+import { BiDownload } from "react-icons/bi";
 
 
 const Section = styled.div`
@@ -107,7 +108,19 @@ const Button = styled.button`
 
 
 
+
+
 const Who = () => {
+  const openPdf = () => {
+    // Assuming your PDF is in the "public" folder
+    const pdfUrl = 'https://rose-lea-5.tiiny.site';
+    
+    // Open the PDF in a new tab/window
+    window.open(pdfUrl, '_blank');
+  };
+  
+
+
   return (
     <Section>
       <Container>
@@ -135,7 +148,7 @@ const Who = () => {
             Driven by a deep passion for blockchain technology, I channel my enthusiasm into crafting a diverse array 
             of projects, each intricately tied to the fascinating realm of decentralized systems.
             </Desc>
-            <Button> CV </Button>
+            <Button onClick={openPdf}> CV </Button>
 
            </Right>
 
