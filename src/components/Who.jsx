@@ -148,7 +148,7 @@ const Who = () => {
             Driven by a deep passion for blockchain technology, I channel my enthusiasm into crafting a diverse array 
             of projects, each intricately tied to the fascinating realm of decentralized systems.
             </Desc>
-            <Button onClick={openPdf}> CV </Button>
+            <Button onClick={openPdf}> Resume  </Button>
 
            </Right>
 

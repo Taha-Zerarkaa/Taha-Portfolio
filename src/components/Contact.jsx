@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import {AiFillFacebook, AiFillGithub, AiFillLinkedin, AiFillTwitterCircle}from 'react-icons/ai'
 import { SiWeb3Dotjs, SiSmartthings} from "react-icons/si";
@@ -124,17 +125,49 @@ const handlelinkedinClick = () => {
 
 
 const Contact = () => {
+
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+ 
+    emailjs
+      .sendForm(
+        "service_9snot1c",
+        "template_8lbmwrq",
+        ref.current,
+        "ooxePrJBX0bwt9eR0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccess(true);
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
+
+
   return (
     <Section>
       <Container>
       <Left>
-        <Form>
+        <Form ref={ref} onSubmit={handleSubmit}>
           <Title>Contact Us</Title>
           <Input placeholder="Name" name="name" />
           <Input placeholder="Email" name="email" />
           <TextArea
-              placeholder="Write your message"/>
+              placeholder="Write your message"
+              name="message"
+              rows={10}
+              />
               <Button type="submit">Send</Button>
+              {success &&
+              "Your message has been sent. We'll get back to you soon :)"}
               <Social>
               <AiFillFacebook onClick={handleFacebookClick} style={{ fontSize: 50 }}/>
               <AiFillGithub onClick={handlegithubClick} style={{ fontSize: 50 }}/>
